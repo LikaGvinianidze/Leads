@@ -1,0 +1,108 @@
+      <!-- BEGIN: Left Aside -->
+      <button class="m-aside-left-close  m-aside-left-close--skin-dark" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+        </button>
+      <div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark">
+        <!-- BEGIN: Aside Menu -->
+        <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark" data-menu-vertical="true" data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+          <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow">
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true">
+              <a href="/" class="m-menu__link">
+                <i class="m-menu__link-icon flaticon-line-graph"></i>
+                <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                <span class="m-menu__link-text">მთავარი გვერდი</span>
+                
+                </span>
+                </span>
+              </a>
+            </li>
+            <% if (isAdmin) { %>
+              <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="/users" class="m-menu__link m-menu__toggle">
+                  <i class="m-menu__link-icon flaticon-users">
+                  </i>
+                  <span class="m-menu__link-text">მომხმარებლები</span>
+                  </a>
+
+              </li>
+
+              <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="/roles" class="m-menu__link m-menu__toggle">
+                  <i class="m-menu__link-icon flaticon-user"></i>
+                  <span class="m-menu__link-text">როლები</span>
+                  
+                </a>
+
+              </li>
+            
+
+
+              <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="/permissions" class="m-menu__link m-menu__toggle">
+                  <i class="m-menu__link-icon flaticon-interface-7"></i>
+                  <span class="m-menu__link-text">უფლებები</span>
+                  
+                </a>
+              </li>
+              <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="/organizations" class="m-menu__link m-menu__toggle">
+                  <i class="m-menu__link-icon flaticon-tabs"></i>
+                  <span class="m-menu__link-text">ორგანიზაციები</span>
+                  
+                </a>
+              </li>
+            <% } %>
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+              <a href="/personnel" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-network"></i>
+                <span class="m-menu__link-text">პერსონალი</span>
+                
+              </a>
+            </li>
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+              <a href="/services" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-interface-3"></i>
+                <span class="m-menu__link-text">სერვისები</span>
+                
+              </a>
+            </li>
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+              <a href="/clients" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-list-3"></i>
+                <span class="m-menu__link-text">კლიენტები</span>
+                
+              </a>
+  
+            </li>
+
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+              <a href="/bookings" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-calendar"></i>
+                <span class="m-menu__link-text">ჩაწერები</span>
+                
+              </a>
+            </li>
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+              <a href="/reports" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-diagram"></i>
+                <span class="m-menu__link-text">რეპორტები</span>
+              </a>
+            </li>
+     </ul>
+        </div>
+        <!-- END: Aside Menu -->
+      </div>
+      <!-- END: Left Aside -->
+
+      <script src="../../../assets/app/js/jquery.js" type="text/javascript"></script>
+      <script>
+
+$(document).ready(function(){
+
+    $("#m_aside_left_minimize_toggle").click(function(){
+    $(".m-menu__nav").css({'position': 'relative', 'width':'auto'});
+});
+   
+});
+      </script>

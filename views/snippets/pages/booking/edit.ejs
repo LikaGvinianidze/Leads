@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- begin::Head -->
+
+<head>
+  <meta charset="utf-8">
+  </meta>
+  <title>Leads.ge</title>
+  <meta name="description" content="Latest updates and statistic charts">
+  </meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </meta>
+  <!-- begin::Web font -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      }
+    });
+  </script>
+  <!-- end::Web font -->
+  <!-- begin::Base Styles -->
+  <!-- begin::Page Vendors -->
+  <link href="../assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css">
+  </link>
+  <!-- end::Page Vendors -->
+  <link href="../assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css">
+  </link>
+  <link href="../assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css">
+  <link href="../assets/demo/default/base/style.css" rel="stylesheet" type="text/css">
+</link>
+  <!-- end::Base Styles -->
+</head>
+<!-- end::Head -->
+<!-- end::Body -->
+
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+  <!-- begin:: Page -->
+  <div class="m-grid m-grid--hor m-grid--root m-page">
+    <!-- header -->
+    <% include ../../../shared/header.ejs %>
+      <!-- begin::Body -->
+      <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+        <% include ../../../shared/sidebar.ejs%>
+          <div class="m-grid__item m-grid__item--fluid m-wrapper">
+            <!-- BEGIN: Subheader -->
+            <div class="m-subheader ">
+              <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                  <h3 class="m-subheader__title users-add-title">
+                    ჩაწერის დამატება
+                  </h3>
+                  <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                    <li class="m-nav__item m-nav__item--home">
+                    
+                    </li>
+                    
+                    <li class="m-nav__item">
+                      <a href="/bookings" class="m-nav__link">
+                      <span class="m-nav__link-text">
+                        ჩაწერები
+                      </span>
+                      </a>
+                    </li>
+                   
+                     
+                    </ul>
+                </div>
+                <div>
+
+                </div>
+              </div>
+            </div>
+            <!-- END: Subheader -->
+            <div class="m-content add-users">
+              <div class="row">
+                <div class="col-md-12">
+                  <!--begin::Portlet-->
+                  <div class="m-portlet m-portlet--tab">
+
+
+                  </div>
+                  <!--end::Portlet-->
+                  <!--begin::Portlet-->
+                  <div class="m-portlet m-portlet--tab">
+
+                    <div class="container-fluid">
+                      <div class="add-search-inputs users-add">
+                        <div class="row">
+                          <div class="col-md-12">
+
+
+                            <form class="m-login__form m-form" id="form-validate" method="post">
+                                <div class="alert alert-success alert-done" role="alert">
+                                  ჩაწერა წარმატებით დაემატა.
+                                </div>
+                                <div class="alert alert-danger alert-error" role="alert">
+                                  სამწუხაროდ ჩაწერა არ დაემატა.
+                                </div>
+                            
+                                <div class="form-group m-form__group row bookings">
+                                    <label class="col-form-label col-lg-12 col-sm-12">
+                                      პერსონალი
+                                    </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                      <select id="m_select2_1" name="orgId param" class="form-control m-select2">
+                                        
+                                          <option value="">ტესტ</option>
+                                          <option value="">ლიკა</option>
+                                                                                     
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group m-form__group row bookings">
+                                      <label class="col-form-label col-lg-12 col-sm-12">
+                                        კლიენტი
+                                      </label>
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <select  id="m_select2_1" name="orgId param" class="form-control m-select2">
+                                          
+                                            <option value="">ტესტ</option>
+                                                                                      
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group m-form__group row bookings">
+                                        <label class="col-form-label col-lg-12 col-sm-12">
+                                          სერვისი
+                                        </label>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                          <select  id="m_select2_1" name="orgId param" class="form-control m-select2">
+                                            
+                                              <option value="">იჰიიი</option>
+                                                                                         
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="m-form__group form-group">
+                                          <label for="">
+                                            სტატუსი
+                                          </label>
+                                          <div class="m-checkbox-inline checkbox-services">
+                                            <label class="m-checkbox">
+                                              <input type="checkbox" name="status" value="active" class="status-checkbox">
+                                              აქტიური
+                                              <span></span>
+                                            </label>
+                                            <label class="m-checkbox">
+                                              <input type="checkbox" name="status" value="canceled" class="status-checkbox">
+                                              გაუქმებული
+                                              <span></span>
+                                            </label>
+                                            <label class="m-checkbox">
+                                              <input type="checkbox" name="status" value="finished" class="status-checkbox">
+                                              დასრულებული
+                                              <span></span>
+                                            </label>
+                                          </div>
+                                        
+                                        </div>
+                                        <div class="m-form__group form-group">
+                                            <label class="col-form-label">
+                                                დაწყების დრო
+                                              </label>
+                                        <input type="text" class="form-control col-md-11" name="from" id="m_timepicker_2" value="00:00" aria-invalid="false">
+                                            </div>
+
+                              <div class="m-form__actions">
+                                <button type="submit" class="btn btn-primary submit">
+                                  შენახვა
+                                </button>
+
+                              </div>
+
+                            </form>
+
+
+
+
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <!--begin::Form-->
+
+                  </div>
+
+
+
+                  <!--end::Portlet-->
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+   
+      <!-- end:: Body -->
+      <% include ../../../shared/footer.ejs %>
+  </div>
+  <!-- end:: Page -->
+  <!-- begin::Scroll Top -->
+  <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+    <i class="la la-arrow-up"></i>
+  </div>
+  <!-- end::Scroll Top -->
+
+  <!-- begin::Base Scripts -->
+  <script src="../assets/app/js/jquery.js" type="text/javascript"></script>
+  <script src="../assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+  <script src="../assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+  <script src="../assets/demo/default/base/permissions.js" type="text/javascript"></script>
+  <script src="../assets/demo/default/custom/components/forms/widgets/bootstrap-timepicker.js" type="text/javascript"></script>
+  <!-- end::Base Scripts -->
+  <!-- begin::Page Vendors -->
+  <script src="../assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+  <!-- end::Page Vendors -->
+  <!-- begin::Page Snippets -->
+  <script src="../assets/app/js/dashboard.js" type="text/javascript"></script>
+  <!-- end::Page Snippets -->
+</body>
+<script>
+  $('.alert-done').hide();
+  $('.alert-error').hide()
+  $("#form-validate").validate();
+
+  $('.status-checkbox').on('change', function() {
+    $('.status-checkbox').not(this).prop('checked', false);  
+});
+</script>
+<!-- end::Body -->
+
+</html>

@@ -1,0 +1,828 @@
+@font-face {
+  font-family: 'BPG ExtraSquare Mtavruli';
+  src: url('fonts/bpg-extrasquare-mtavruli-webfont.eot');
+  /* IE9 Compat Modes */
+  src: url('fonts/bpg-extrasquare-mtavruli-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/bpg-extrasquare-mtavruli-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+  url('fonts/bpg-extrasquare-mtavruli-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/bpg-extrasquare-mtavruli-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('fonts/bpg-extrasquare-mtavruli-webfont.svg#bpg_extrasquare_mtavruliregular') format('svg');
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'BPG ExtraSquare';
+  src: url('fonts/bpg-extrasquare-webfont.eot');
+  /* IE9 Compat Modes */
+  src: url('fonts/bpg-extrasquare-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/bpg-extrasquare-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+  url('fonts/bpg-extrasquare-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/bpg-extrasquare-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('fonts/bpg-extrasquare-webfont.svg#bpg_extrasquareregular') format('svg');
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'BPG Algeti';
+  src: url('fonts/bpg-algeti-webfont.eot');
+  /* IE9 Compat Modes */
+  src: url('fonts/bpg-algeti-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('fonts/bpg-algeti-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+  url('fonts/bpg-algeti-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+  url('fonts/bpg-algeti-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('fonts/bpg-algeti-webfont.svg#bpg_algetiregular') format('svg');
+  /* Legacy iOS */
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+textarea {
+  resize: none;
+}
+
+.datepicker-switch,
+.datepicker table tr td span {
+  font-family: 'BPG Algeti';
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.m-subheader {
+  font-family: 'BPG Algeti';
+}
+
+.m-aside-menu .m-menu__nav {
+  font-family: 'BPG ExtraSquare Mtavruli';
+  position: fixed;
+  width: 255px;
+}
+
+.add-search-inputs {
+  padding: 25px 0px;
+  font-family: 'BPG Algeti';
+}
+
+.add-search-inputs .btn {
+  font-family: 'BPG Algeti';
+  font-size: 16px;
+}
+
+.btn-user {
+  margin: auto;
+  display: table;
+}
+
+.add-search-inputs .m-menu__link-icon {
+  padding-left: 7px;
+}
+
+.add-search-inputs .m-input--square {
+  line-height: 23px;
+}
+
+.users-add {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.users-add .btn {
+  margin: 0 auto;
+  display: table;
+  padding: 0.65rem 4.25rem;
+}
+
+.add-users {
+  padding-top: 0px !important;
+}
+
+.role-select {
+  height: 39px !important;
+  font-family: 'BPG Algeti';
+}
+
+#form-validate label.error,
+label.error {
+  color: red;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  border-radius: 50% !important;
+  margin: 0 5px;
+}
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.pagination {
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+  padding-bottom: 25px;
+}
+
+.pagination>li:first-child>a,
+.pagination>li:first-child>span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #6C7CA0;
+  border-color: #6C7CA0;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #596683;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 37px;
+  text-align: center;
+}
+
+.m-nav__link:hover {
+  color: #596683;
+}
+
+.m-nav__link-text {
+  transition: 0.3s;
+}
+
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler:hover span::before,
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler:hover span::after {
+  background: #596683;
+}
+
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler:hover span {
+  background: #596683;
+}
+
+.m-subheader .m-subheader__breadcrumbs.m-nav>.m-nav__item>.m-nav__link:hover>.m-nav__link-text {
+  color: #596683;
+}
+
+.alert-done {
+  display: none;
+}
+
+.users-add-title {
+  border-right: 1px solid #e2e5ec;
+}
+
+.alert-error {
+  display: none;
+}
+
+.m-login.m-login--1 .m-login__aside {
+  margin: 0 auto;
+  font-family: 'BPG Algeti';
+  padding: 0px !important;
+}
+
+.input-login {
+  border-radius: 40px;
+  border: none;
+  padding: 1.5rem 1.5rem;
+  margin-top: 1.5rem;
+  color: #91899f;
+  background: #f7f6f9;
+  font-size: 1rem;
+  line-height: 1.25 !important;
+  display: block;
+  width: 100%;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  border-radius: 40px !important;
+  border: none !important;
+  padding: 1.5rem 1.5rem !important;
+  margin-top: 1.5rem !important;
+  font-family: 'BPG Algeti';
+}
+
+.form-control:focus {
+  background-color: #f7f6f9 !important;
+}
+
+.m-login.m-login--1 .m-login__wrapper {
+  overflow: hidden;
+  padding: 10% 2rem 2rem 2rem;
+}
+
+#m_login_signin_submit {
+  font-family: 'BPG Algeti';
+}
+
+.leads {
+  color: #638aa3;
+  font-size: 4em;
+  font-family: "Roboto";
+}
+
+.leads-header {
+  line-height: 50px;
+  font-size: 2em;
+  color: #6C7CA0;
+}
+
+.m-brand .m-brand__logo .m-brand__logo-wrapper:hover {
+  text-decoration: none;
+}
+
+.m-brand__logo-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.leads-logo img {
+  width: 44%;
+  height: auto;
+}
+
+.m-checkbox {
+  color: #638aa3;
+}
+
+.m-link {
+  color: #577399;
+}
+
+.btn-focus {
+  color: #fff;
+  background-color: #6c7ca0;
+  border-color: #6c7ca0;
+}
+
+.btn-focus:hover {
+  color: #fff;
+  background-color: #6c7ca0ed;
+  border-color: #6c7ca0;
+}
+
+.m-checkbox {
+  color: #638aa3;
+}
+
+.m-checkbox.m-checkbox--focus>input:checked~span {
+  border: 1px solid #638aa3;
+}
+
+.m-checkbox.m-checkbox--focus>span:after {
+  border: solid #7281a4;
+}
+
+.m-link:hover {
+  color: #466186d4;
+}
+
+.input-login:focus::placeholder {
+  color: #91899f !important;
+}
+
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item>.m-menu__heading .m-menu__link-text,
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item>.m-menu__link .m-menu__link-text {
+  color: #596683;
+}
+
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__heading .m-menu__link-text,
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__link .m-menu__link-text {
+  color: #9aa3b5;
+}
+
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item>.m-menu__heading .m-menu__link-icon,
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item>.m-menu__link .m-menu__link-icon {
+  color: #596683;
+}
+
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__heading .m-menu__link-icon,
+.m-aside-menu.m-aside-menu--skin-dark .m-menu__nav>.m-menu__item.m-menu__item--active>.m-menu__link .m-menu__link-icon {
+  color: #9aa3b5;
+}
+
+.m-nav>.m-nav__item:hover>.m-nav__heading .m-nav__link-icon,
+.m-nav>.m-nav__item:hover>.m-nav__heading .m-nav__link-text,
+.m-nav>.m-nav__item:hover>.m-nav__link .m-nav__link-icon,
+.m-nav>.m-nav__item:hover>.m-nav__link .m-nav__link-text,
+.m-nav>.m-nav__item.m-nav__item--active>.m-nav__heading .m-nav__link-icon,
+.m-nav>.m-nav__item.m-nav__item--active>.m-nav__heading .m-nav__link-text,
+.m-nav>.m-nav__item.m-nav__item--active>.m-nav__link .m-nav__link-icon,
+.m-nav>.m-nav__item.m-nav__item--active>.m-nav__link .m-nav__link-text {
+  color: #596683;
+  transition: 0.3s;
+}
+
+.m-nav>.m-nav__item:hover>.m-nav__link .m-nav__link-icon {
+  color: #596683;
+  transition: 0.3s;
+}
+
+.m-nav>.m-nav__item>.m-nav__link .m-nav__link-icon {
+  color: #596683;
+  transition: 0.3s;
+}
+
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler.m-brand__toggler--active span::before,
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler.m-brand__toggler--active span::after {
+  background: #596683;
+}
+
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler.m-brand__toggler--active span::before,
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler.m-brand__toggler--active span::after {
+  background: #596683;
+}
+
+.m-brand.m-brand--skin-dark .m-brand__tools .m-brand__toggler.m-brand__toggler--active span {
+  background: #596683;
+}
+
+.m-link:hover:after {
+  border-bottom: 1px solid #466186d4;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+.btn.m-btn--label-brand {
+  color: #6f727d;
+  font-family: 'BPG Algeti';
+}
+
+.m-login.m-login--1 .m-login__wrapper .m-login__head .m-login__title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #638aa3;
+}
+
+.btn-outline-focus.m-btn--air,
+.btn-focus.m-btn--air,
+.m-btn--gradient-from-focus.m-btn--air {
+  -webkit-box-shadow: 0px 5px 10px 2px #bdc3d4;
+  -moz-box-shadow: 0px 5px 10px 2px #bdc3d4;
+  box-shadow: 0px 5px 10px 2px #bdc3d4;
+}
+
+.btn-outline-focus.m-btn--air.focus,
+.btn-outline-focus.m-btn--air:focus,
+.btn-outline-focus.m-btn--air:hover,
+.btn-focus.m-btn--air.focus,
+.btn-focus.m-btn--air:focus,
+.btn-focus.m-btn--air:hover,
+.m-btn--gradient-from-focus.m-btn--air.focus,
+.m-btn--gradient-from-focus.m-btn--air:focus,
+.m-btn--gradient-from-focus.m-btn--air:hover {
+  -webkit-box-shadow: 0px 5px 10px 2px #bdc3d4;
+  -moz-box-shadow: 0px 5px 10px 2px #bdc3d4;
+  box-shadow: 0px 5px 10px 2px #bdc3d4;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #596683;
+  border-color: #596683;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.show>.btn-primary.dropdown-toggle {
+  background-color: #6C7CA0;
+  background-image: none;
+  border-color: #6C7CA0;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #6C7CA0;
+  border-color: #6C7CA0;
+}
+
+.form-control:focus {
+  border-color: #6C7CA0;
+}
+
+.form-control {
+  font-family: 'BPG Algeti';
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.m-dropdown.m-dropdown--header-bg-fill .m-dropdown__header {
+  background-color: #323949 !important;
+}
+
+.m-topbar .m-topbar__nav.m-nav>.m-nav__item.m-topbar__user-profile.m-topbar__user-profile--img.m-dropdown--arrow .m-dropdown__arrow {
+  color: #323949;
+}
+
+.btn-focus:active,
+.btn-focus.active,
+.show>.btn-focus.dropdown-toggle {
+  background-color: #323949 !important;
+  background-image: none;
+  border-color: #323949 !important;
+}
+
+.btn-focus:hover,
+.btn-focus {
+  color: #fff;
+  background-color: #6C7CA0 !important;
+  border-color: #6C7CA0 !important;
+}
+
+.textarea-org {
+  resize: none;
+}
+
+.m-nav>.m-nav__item>.m-nav__link .m-nav__link-text {
+  font-family: 'BPG Algeti';
+}
+
+.working-hours {
+  text-align: center;
+  padding: 10px 0px 30px;
+  color: #3f4047;
+  font-size: 15px;
+}
+
+.working-hours-label {
+  font-size: 15px
+}
+
+#m_timepicker_2,
+#m_timepicker_3 {
+  max-width: 85%;
+}
+
+.time-picker-text {
+  line-height: 38px;
+}
+
+#pac-input {
+  border-color: #ebedf2;
+  color: #575962;
+  font-family: 'BPG Algeti';
+  width: 50%;
+  padding: 7px 1px;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ebedf2;
+  border-radius: 0.25rem;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.map {
+  padding-left: 0px;
+}
+
+.m-datatable__row-detail {
+  display: none;
+}
+
+.table-client {
+  width: 20%;
+}
+
+.table-client-arrow {
+  width: 5%;
+}
+
+.table-client-name {
+  width: 15%;
+}
+
+.m-datatable__head {
+  font-family: 'BPG Algeti';
+}
+
+.table-client-name {
+  width: 13%;
+}
+
+.table-client-arrow {
+  width: 4%;
+}
+
+#user_list ul li {
+  list-style: none;
+  padding-top: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Roboto';
+}
+
+#user_list ul {
+  padding-left: 0px;
+}
+
+#user_list ul {
+  padding: 10px;
+  border: 1px solid rgb(235, 237, 242);
+  border-top: 0px solid rgb(235, 237, 242);
+}
+
+.organization-manager {
+  padding-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cls {
+  clear: both;
+}
+
+.organization-manager a li {
+  list-style: none;
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: #3f4047;
+}
+
+.manager-title {
+  margin: 0 auto;
+  display: table;
+  font-size: 15px;
+  padding: 20px 0px;
+}
+
+.manager-rem {
+  display: block;
+  width: 100%;
+  float: left;
+}
+
+.manager-rem a {
+  float: left;
+  width: 30%;
+}
+
+.manager-remove {
+  margin-top: 10px !important;
+  margin: 10px !important;
+}
+
+.manager-name {
+  margin-top: 15px;
+}
+
+.m-header {
+  position: fixed;
+}
+
+.checkbox-services .m-checkbox {
+  color: #3f4047;
+}
+
+.checkbox-services {
+  padding-top: 10px;
+}
+
+.m-bootstrap-select:focus {
+  border-color: #6C7CA0;
+}
+
+.bootstrap-select.btn-group.show>.dropdown-toggle.btn-default,
+.bootstrap-select.btn-group.show>.dropdown-toggle.btn-secondary {
+  border-color: #4950578a !important;
+}
+
+.bootstrap-select.btn-group.show>.dropdown-toggle.btn-default,
+.bootstrap-select.btn-group.show>.dropdown-toggle.btn-secondary {
+  border-color: #4950578a !important;
+}
+
+.my-organizations tr td a {
+  color: #212529;
+}
+
+.services-org {
+  padding-left: 20px;
+}
+
+.services-org .orgservice {
+  float: left;
+}
+
+.services-org .manager-name {
+  float: left;
+  list-style: none;
+}
+
+.org-select {
+  margin: 15px 18px;
+  font-family: 'BPG Algeti';
+  width: 215px !important;
+}
+
+.pull-left {
+  font-family: 'BPG Algeti';
+}
+
+.select-org {
+  position: relative;
+}
+
+.toast-organization {
+  border-radius: 20px;
+  padding: 8px 45px;
+  position: absolute;
+  top: 64px;
+  left: 3px;
+  background-color: rgba(244, 81, 108, 0.6);
+  font-family: 'BPG Algeti';
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 9px solid rgba(244, 81, 108, 0.6);
+  ;
+  position: absolute;
+  top: -9px;
+  right: 38px;
+}
+
+.toast-message {
+  font-family: 'BPG Algeti';
+}
+
+.datepicker tbody tr>td.day.selected,
+.datepicker tbody tr>td.day.selected:hover,
+.datepicker tbody tr>td.day.active,
+.datepicker tbody tr>td.day.active:hover {
+  color: #fff !important;
+  background: #4950578a;
+}
+
+.datepicker tbody tr>td.day.today {
+  background: #4950578a;
+}
+
+.datepicker tbody tr>td span.month.active:hover,
+.datepicker tbody tr>td span.month.active {
+  background: #4950578a;
+}
+
+.datepicker table tr td span.active.active.focus,
+.datepicker table tr td span.active.active:focus,
+.datepicker table tr td span.active.active:hover,
+.datepicker table tr td span.active.disabled.active.focus,
+.datepicker table tr td span.active.disabled.active:focus,
+.datepicker table tr td span.active.disabled.active:hover,
+.datepicker table tr td span.active.disabled:active.focus,
+.datepicker table tr td span.active.disabled:active:focus,
+.datepicker table tr td span.active.disabled:active:hover,
+.datepicker table tr td span.active.disabled:hover.active.focus,
+.datepicker table tr td span.active.disabled:hover.active:focus,
+.datepicker table tr td span.active.disabled:hover.active:hover,
+.datepicker table tr td span.active.disabled:hover:active.focus,
+.datepicker table tr td span.active.disabled:hover:active:focus,
+.datepicker table tr td span.active.disabled:hover:active:hover,
+.datepicker table tr td span.active:active.focus,
+.datepicker table tr td span.active:active:focus,
+.datepicker table tr td span.active:active:hover,
+.datepicker table tr td span.active:hover.active.focus,
+.datepicker table tr td span.active:hover.active:focus,
+.datepicker table tr td span.active:hover.active:hover,
+.datepicker table tr td span.active:hover:active.focus,
+.datepicker table tr td span.active:hover:active:focus,
+.datepicker table tr td span.active:hover:active:hover {
+  background: #4950578a;
+}
+
+.table-condensed thead tr:nth-child(3) {
+  display: none;
+}
+
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active:hover:active {
+  background: #4950578a;
+}
+
+.add-button {
+  margin: 0 auto;
+  display: table;
+}
+
+.add-button button {
+  padding: 0.65rem 4.25rem;
+}
+
+.select2-container {
+  width: 230px;
+  border-radius: 50%;
+}
+
+.select-org {
+  margin: 15px 0px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--open .select2-selection--multiple,
+.select2-container--default.select2-container--open .select2-selection--single {
+  border-color: #4950573b;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-family: 'BPG Algeti';
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(113, 106, 202, 0.11);
+  -moz-box-shadow: 0px 3px 20px 0px rgba(113, 106, 202, 0.11);
+  box-shadow: 0px 3px 20px 0px rgba(113, 106, 202, 0.11);
+}
+
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--single {
+  border-radius: 10px;
+}
+
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--single {
+  border-radius: 10px;
+}
+
+.select2-results,
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  font-family: 'BPG Algeti';
+}
+
+.table thead th {
+  background: #f4f3fb;
+  color: #575962;
+  font-weight: 600;
+}
+
+.bookings .select2-container--default .select2-selection--single .select2-selection__rendered {
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(113, 106, 202, 0.11);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(113, 106, 202, 0.11);
+  box-shadow: 0px 0px 0px 0px rgba(113, 106, 202, 0.11);
+
+}
+
+.bookings .select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single {
+  border-radius: 0px;
+}
+
+@media (max-width: 992px) {
+  #m_aside_header_menu_mobile_toggle {
+    display: none !important;
+  }
+}

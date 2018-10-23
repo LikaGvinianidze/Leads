@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- begin::Head -->
+
+<head>
+	<meta charset="utf-8" />
+	<title>
+		Leads.ge
+	</title>
+	<meta name="description" content="Base form control examples">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!--begin::Web font -->
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: { "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"] },
+			active: function () {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+	<!--end::Web font -->
+	<!--begin::Base Styles -->
+	<link href="../../../assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="../../../assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="../../../assets/demo/default/base/style.css" rel="stylesheet" type="text/css">
+	<!--end::Base Styles -->
+</head>
+<!-- end::Head -->
+<!-- end::Body -->
+
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+	<!-- begin:: Page -->
+	<div class="m-grid m-grid--hor m-grid--root m-page">
+		<!-- header -->
+		<% include ../../../shared/header.ejs %>
+			<!-- begin::Body -->
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+				<% include ../../../shared/sidebar.ejs%>
+					<!-- end:: Body -->
+					<div class="m-grid__item m-grid__item--fluid m-wrapper">
+						<!-- BEGIN: Subheader -->
+						<div class="m-subheader ">
+							<div class="d-flex align-items-center">
+								<div class="mr-auto">
+									<h3 class="m-subheader__title users-add-title">
+										ორგანიზაციის რედაქტირება
+									</h3>
+									<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+										<li class="m-nav__item m-nav__item--home">
+
+										</li>
+										<% if (isAdmin) { %>
+											<li class="m-nav__item">
+												<a href="/organizations" class="m-nav__link">
+													<span class="m-nav__link-text">
+														ორგანიზაციები
+													</span>
+												</a>
+											</li>
+										<% } else { %>
+											<li class="m-nav__item">
+												<a href="/user/organizations" class="m-nav__link">
+													<span class="m-nav__link-text">
+														ჩემი ორგანიზაციები
+													</span>
+												</a>
+											</li>
+										<% } %>
+									</ul>
+								</div>
+								<div>
+
+								</div>
+							</div>
+						</div>
+						<!-- END: Subheader -->
+						<div class="m-content add-users">
+							<div class="row">
+								<div class="col-md-12">
+									<!--begin::Portlet-->
+									<div class="m-portlet m-portlet--tab">
+
+										<div class="container">
+											<div class="add-search-inputs">
+												<div class="row">
+													<div class="col-md-12">
+
+
+														<form class="m-login__form m-form" id="form-update">
+															<div class="form-group m-form__group">
+																<label for="NameInput">
+																	ორგანიზაციის დასახელება
+																</label>
+																<input type="text" class="form-control m-input" id="NameInput" aria-describedby="emailHelp" name="name" value="<%= organization.name %>"/>
+
+															</div>
+															<div class="form-group m-form__group">
+																<label for="NameInput">
+																	ინფორმაცია ორგანიზაციაზე
+																</label>
+
+																<textarea class="form-control m-input textarea-org" id="NameInput" aria-describedby="emailHelp" name="info"><%= organization.info %></textarea>
+															</div>
+															<div class="form-group m-form__group">
+																<label for="SurnameInput">
+																	მისამართი
+																</label>
+																<input type="text" class="form-control m-input" id="SurnameInput" aria-describedby="emailHelp" name="address" value="<%= organization.address %>">
+
+															</div>
+															<% if (isAdmin) { %>
+																<div class="form-group m-form__group">
+																	<label for="RoleInput">
+																		სტატუსი
+																	</label>
+																	<select class="form-control m-input role-select m-bootstrap-select m_selectpicker" name="status" aria-describedby="option-error" aria-invalid="false">
+	
+																		<option <%if (organization.status === 'active') { %>  selected <% } %> value="active">
+																			აქტიური
+																		</option>
+	
+																		<option <%if (organization.status === 'suspended') { %>  selected <% } %> value="suspended">
+																			შეჩერებული
+																		</option>
+	
+																		<option <%if (organization.status === 'removed') { %>  selected <% } %> value="removed">
+																			არააქტიური
+																		</option>
+	
+	
+																	</select>
+	
+																</div>
+															
+																<div class="form-group m-form__group">
+																	<label for="RoleInput">
+																		პაკეტები
+																	</label>
+																	<select class="form-control m-input role-select m-bootstrap-select m_selectpicker" name="packet_id" aria-describedby="option-error" aria-invalid="false">
+																		<% packets.forEach(packet => { %>
+																			<option <%if (orgPacket.name === packet.name) { %>  selected <% } %> value="<%= packet.id %>">
+																				<%= packet.name %>
+																			</option>
+																		<% }) %>
+																	</select>
+	
+																</div>
+																<div class="form-group m-form__group">
+																	<label class="col-form-label">
+																		გადახდები
+																	</label>
+																	<div class="date-picker">
+																		<input type='text' class="form-control" id="ge_datepicker" name="paydate" value="<%= organization.last_payment_date %>" />
+																	</div>
+																</div>
+																<div class="form-group m-form__group">
+																	<label class="manager-title">ორგანიზაციის მენეჯერები</label>
+																	<ul class="organization-manager">
+																		<% orgUsers.forEach(orgUser => { %>
+																				<div class="manager-rem">
+	
+																					<a href="/users/<%= orgUser.id %>" class="manager-name"><li><%= orgUser.firstname %> <%= orgUser.lastname %></li></a>
+																					<a href="#" id="del" uid="<%= orgUser.id %>" oid="<%= organization.id %>" class="orguser m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill manager-remove" title="Delete">
+																						<i class="la la-remove"></i>
+																					</a>
+																				</div>
+	
+																		<% }) %>
+																		<div class="cls"></div>
+																	</ul>
+																</div>
+																<div class="form-group m-form__group">
+																	<label for="user_search">მომხმარებლის დამატება</label>
+																	<input type="text" name="user_id" id="user_search" class="form-control m-input" list="languages" autocomplete="off" >
+																	<div id="user_list"></div>
+																</div>
+																<% } %>
+
+															<div class="form-group m-form__group">
+																<div class="working-hours">სამუშაო საათები</div>
+
+
+																<% const days = ['ორშაბათი','სამშაბათი','ოთხშაბათი','ხუთშაბათი','პარასკევი','შაბათი','კვირა']	%>
+
+																<% workDays.forEach(workDay => { %>
+																	<div class="form-group m-form__group row">
+																		<label class="col-form-label col-lg-2 col-sm-12 col-md-2 working-hours-label">
+																			<%= days[workDay.day] %>
+																		</label>
+																		<div class="col-lg-5 col-md-5 col-sm-12">
+																			<div class="row">
+																				<input type='text' class="form-control col-md-11" name="from" id="m_timepicker_2" value="<%= workDay.from %>">
+																				<div class="col-md-1 time-picker-text">დან</div>
+
+																			</div>
+
+																		</div>
+																		<div class="col-lg-5 col-md-5 col-sm-12">
+																			<div class="row">
+																				<input type='text' class="form-control col-md-11" name="to" id="m_timepicker_3" value="<%= workDay.to %>"/>
+																				<div class="col-md-1 time-picker-text">მდე</div>
+	
+																			</div>
+																		</div>
+																	</div>
+																<% }) %>
+															</div>
+
+															<div class="m-form__actions add-button">
+																<button type="submit" class="btn btn-primary submit">
+																	შენახვა
+																</button>
+
+															</div>
+														</form>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+
+
+										<!--begin::Form-->
+
+									</div>
+
+
+
+									<!--end::Portlet-->
+								</div>
+
+							</div>
+						</div>
+					</div>
+			</div>
+
+			<!-- end:: Body -->
+			<!-- footer -->
+			<% include ../../../shared/footer.ejs %>
+	</div>
+	<!-- end:: Page -->
+	<!-- begin::Scroll Top -->
+	<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+		<i class="la la-arrow-up"></i>
+	</div>
+	<!-- end::Scroll Top -->
+	<!-- begin::Quick Nav -->
+	<!-- begin::Quick Nav -->
+	<!--begin::Base Scripts -->
+	<script src="../../assets/app/js/jquery.js" type="text/javascript"></script>
+	<script src="../../assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+	<script src="../../assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+	<script src="../../assets/demo/default/base/organizations.js" type="text/javascript"></script>
+	<script src="../../assets/demo/default/custom/components/forms/widgets/datepicker.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="../../assets/demo/default/custom/components/forms/widgets/bootstrap-timepicker.js" type="text/javascript"></script>
+	<!--end::Base Scripts -->
+	<script>
+		  $(document).on('click', '.userlist', function() {
+				$('#user_search').val($(this).text()).attr('value', $(this).attr('value'));
+				$('#user_list').fadeOut();
+			});
+	</script>
+	<script>
+
+		$.fn.datepicker.dates['en'] = {
+			days: ["", "", "", "", "", "", ""],
+			daysShort: ["", "", "", "", "", "", ""],
+			daysMin: ["", "", "", "", "", "", ""],
+			months: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
+			monthsShort: ["იან", "თებ", "მარ", "აპრ", "მაი", "ივნ", "ივლ", "აგვ", "სექ", "ოქტ", "ნოე", "დეკ"],
+			today: "Today",
+			clear: "Clear",
+			format: "yyyy-mm-dd",
+			titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+			weekStart: 0,
+		};
+
+		$('#ge_datepicker').datepicker({
+			language: 'en',
+			orientation: 'bottom',
+
+		});
+
+
+
+
+	</script>
+</body>
+<!-- end::Body -->
+
+</html>

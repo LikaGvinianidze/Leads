@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- begin::Head -->
+
+<head>
+  <meta charset="utf-8">
+  </meta>
+  <title>Leads.ge</title>
+  <meta name="description" content="Latest updates and statistic charts">
+  </meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </meta>
+  <!-- begin::Web font -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      }
+    });
+  </script>
+  <!-- end::Web font -->
+  <!-- begin::Base Styles -->
+  <!-- begin::Page Vendors -->
+  <link href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css">
+  </link>
+  <!-- end::Page Vendors -->
+  <link href="assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css">
+  </link>
+  <link href="assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css">
+  <link href="assets/demo/default/base/style.css" rel="stylesheet" type="text/css">
+  </link>
+  <!-- end::Base Styles -->
+</head>
+<!-- end::Head -->
+
+
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+  <!-- begin:: Page -->
+  <div class="m-grid m-grid--hor m-grid--root m-page">
+    <!-- header -->
+    <% include ../../../shared/header.ejs %>
+      <!-- begin::Body -->
+      <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+        <% include ../../../shared/sidebar.ejs%>
+       
+          
+      
+          <div class="m-grid__item m-grid__item--fluid m-wrapper">
+                          <!--begin::Portlet-->
+                          <div class="container-fluid">
+							<div class="m-portlet m-portlet--tab">
+
+                  <div class="container-fluid">
+                    <div class="add-search-inputs">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <input type="search" class="form-control m-input m-input--square" id="user_search" placeholder="მომხმარებლის ძიება">
+                          </div>
+                          <div class="col-md-2">
+                            <button id="search" type="reset" class="btn btn-primary">
+                                ძიება  <i class="m-menu__link-icon flaticon-search-1"></i>
+                            </button>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                      <div class="col-md-6 text-center">
+                        <a href="/users/add" class="btn btn-primary">მომხმარებლის დამატება <i class="m-menu__link-icon flaticon-add"></i></a>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="m-portlet m-portlet--tab">
+  
+                    <div class="container-fluid">
+                      <div id="searched" class="add-search-inputs">
+                        
+                          <table id="users_table" class="users-table table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>სახელი</th>
+                                <th>გვარი</th>
+                                <th>ელფოსტა</th>
+                                <th>ტელეფონი</th>
+                                <th>როლი</th>
+                                <th></th>
+                                
+                              </tr>
+                              </thead>
+                              <% let i = 1; users.forEach((user) => { %>
+                                <tbody id="usr_rows">
+                                  <tr>
+                                    <td scope="row"><%= i %></td>
+                                    <td><%= user.firstname %></td>
+                                    <td><%= user.lastname %></td>
+                                    <td><%= user.email %></td>
+                                    <td><%= user.phone %></td>
+                                    <td><%= user.name %></td>
+                                    <td>
+                                    <span>
+                                      <a href="/users/<%= user.id %>" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">
+                                        <i class="la la-edit"></i>
+                                      </a>
+                                    <% if (email !== user.email ) { %>
+                                      <a href="#" id="del" uid="<%= user.id %>" class="user-del m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="Delete">
+                                        <i class="la la-trash"></i>
+                                      </a>
+                                    <% } %>
+                                    </span>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              <% i++; }) %>
+  
+                            </table>
+                            
+                  
+                      </div>
+                        <% if (pages > 1) { %>
+                          <ul class="pagination">
+                            <% for (let j = 1; j <= pages; j++) { %>
+                                <li class="<%= current == j ? 'active' : ''  %>"><a href="/users?page=<%= j %>"><%= j %></a></li>
+                            <% } %>
+                          </ul>
+                        <% } %>
+                    </div>
+                 
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <% include ../../../shared/footer.ejs %>
+      </div>
+      <% if (created) { %>
+        <div id="toast-container" class="toast-bottom-right">
+          <div class="toast toast-success" aria-live="polite">
+            <div class="toast-message">მომხმარებელი წარმატებით დაემატა</div>
+          </div>
+        </div>
+      <% } %>
+      <!-- end:: Body -->
+  </div>
+
+  <!-- begin::Scroll Top -->
+  <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+    <i class="la la-arrow-up"></i>
+  </div>
+  <!-- end::Scroll Top -->
+
+  <!-- begin::Base Scripts -->
+  <script src="assets/app/js/jquery.js" type="text/javascript"></script>
+  <script src="assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+  <script src="assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+  <script src="assets/demo/default/base/users.js" type="text/javascript"></script>  
+  <!-- end::Base Scripts -->
+  <!-- begin::Page Vendors -->
+  <script src="assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+  <!-- end::Page Vendors -->
+  <!-- begin::Page Snippets -->
+  <script src="assets/app/js/dashboard.js" type="text/javascript"></script>
+  <!-- end::Page Snippets -->
+</body>
+<!-- end::Body -->
+
+</html>

@@ -1,0 +1,18 @@
+image: node:8.11.1
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: # Modify the commands below to build your repository.
+          - npm install
+          - npm test
+  branches:
+    staging:
+      - step:
+          script:
+            - npm install
+            - npm test
+            - npm i -g pm2
+            - pm2 deploy ecosystem.config.js production
